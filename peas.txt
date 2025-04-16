@@ -1,0 +1,25 @@
+PEAS Assessment
+Trenonn Shumway
+
+Sample solution:
+	The Orbito board game is a game similar to Connect Four where the end goal is to have four pieces in a row. However, the board is smaller being only a 4 by 4 board and there is another twist, each turn the player gets to move an opponent's piece to a horizontal or vertical neighbor then they take their turn by placing their own piece. After their turn they press the middle and the board rotates everything counterclockwise in one space with the middle four spots rotating around each other and the outside spaces rotating with each other. The winner is decided to be the first player to get four in a row after the pieces have been rotated. If the board fills up it is rotated 5 times and if there is no winner during that time then it is a draw or if the two players get 4 in a row at the same time it is also a draw. The agent will use the given state each move to determine the best course of action to take using the adversarial search strategy.
+
+The Performance Measure:
+	There will be three possible reward values declaring the performance of the agent. A -1 results from a loss of the game, a 0 results from a draw, and a 1 results from a win from the agent.
+
+The Environment is:
+	Observability: fully observable because the agent is able to see the whole board all the time and will see the effects of a move on the entire board.
+	Uncertainty: Deterministic because you know the outcome of your moves the only unknown would be the action of the opposing side
+	Duration: Sequential because it takes a step by step turn for each agent and the environment is altered after each move
+	Stability: Static because the game freezes between turns and the state is only changed when the agent makes a move. There is no penalty for taking too long to make a choice.
+	Granularity: Discrete because there are a finite number of states in the game
+	Participants: Multi-Agent because there will be two agents versing each other at one time. They will have to try and win against the other agent and the opposing moves help to determine what action they will take
+	Knowledge: Known. The outcome of every move is known.
+
+The actions (Actuators):
+	
+	Move an opponent’s piece: the agent can move an opponent’s piece to an open adjacent non-diagonal position.
+	Place a piece: the agent places their piece in any open position
+	Rotate the board pieces: this will be done automatically but after each turn the board pieces are shuffled counterclockwise
+The Percepts (Sensors):
+	The agent gets direct knowledge of the state of the board after each move is done and will know if the game is over or not and who the winner is. The agent will use this current state combined with adversarial search patterns to find the best action to take for its turn.
